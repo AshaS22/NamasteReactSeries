@@ -1,3 +1,6 @@
+import React from "react";
+import  ReactDOM  from "react-dom/client";
+
 // create h1 in react
 //Object is where we give attribute to tags
 const heading = React.createElement('h1', {id:'heading'}, "Namaste from react")
