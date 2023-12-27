@@ -1,3 +1,18 @@
 h1{
     color: rgb(85, 0, 255);
 }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_icon,
+.react_icon{
+    height: 30px;
+    width: 30px;
+}
+
+.search{
+    padding: 4px;
+}
