@@ -1,18 +1,57 @@
-h1{
-    color: rgb(85, 0, 255);
-}
-
-.header{
+.header_container{
     display: flex;
     justify-content: space-between;
+    border: 1px solid burlywood;
+    background-color:cadetblue;
+    margin: 5px;
+    padding: 8px;
 }
 
-.profile_icon,
-.react_icon{
-    height: 30px;
-    width: 30px;
+.logo{
+    height: 100px;
+    width: 100px;
 }
 
-.search{
-    padding: 4px;
+.nav_items{
+    display: flex;
+    padding: 25px;
+}
+
+.nav_items>li{
+    padding: 0 20px;
+    list-style: none;
+}
+
+.app_body{
+    border: 1px solid black;
+    height: 600px;
+    margin: 5px;
+    overflow-y: scroll;
+}
+
+.rest_card{
+    border: 1px solid black;
+    /* height: 250px; */
+    width: 200px;
+}
+
+.rest_image{
+    height: 100px;
+    /* width: 150px; */
+}
+
+.rest_card{
+padding: 5px;
+margin: 5px;
+}
+
+.rest_card>h2,h3{
+    margin: 2px;
+}
+
+.rest_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px;
 }

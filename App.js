@@ -1,42 +1,72 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {HeaderAssignment} from './HeaderAssignment';
+import Logo from "./assets/chef_food.png";
+import RestaurantsInfo from "./restaurants.json";
 
-//React.createElement => Creates an Object => When we render this Object on DOM, it becomes an HTML Element
+// Header
+//  - Logo
+//  - Navitems
+// Body
+//  - Search bar
+//  - Restaurant list container
+// Footer
+//  - Copyright, Link, Address
 
-// const heading = React.createElement("h1", {}, "Namaste from Reacttttt");
-
-//JSX
-
-// React Element
-// JSX ------>(Transpiled)ReactElement => JS Object => HTML ELement
-const h1 = <h1>Namaste from React1</h1>;
-
-// React functional component
-const Heading = () => <h1>React functional component</h1>;
-
-// Assignment
-const header = (
-  <div className="title" id="1" tabIndex={0}>
-    <h1>
-      <h2>
-        <h3>Hello from element</h3>
-      </h2>
-    </h1>
-  </div>
-);
-
-// Component composition
 const Header = () => (
-  <div className="title">
-    <h1>
-      <h2>
-        <h3>Hello from Component</h3>
-      </h2>
-    </h1>
-    {header}
+  <div className="header_container">
+    <div className="logo_container">
+      <img className="logo" src={Logo} alt="Logo"></img>
+    </div>
+    <div className="nav_container">
+      <ul className="nav_items">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact Us</li>
+        <li>Cart</li>
+      </ul>
+    </div>
   </div>
 );
 
+const RestaurantCard = (props) => {
+  const { name, cloudinaryImageId, cuisines, avgRating, slaString } =
+    props.resData.info;
+  return (
+    <div className="rest_card">
+      <img
+        src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}
+        alt=""
+        className="rest_image"
+      ></img>
+      <h2 className="rest_name">{name}</h2>
+      <h3 className="cuisine">{cuisines.join(", ")}</h3>
+      <h4 className="rating">{avgRating}</h4>
+      <h4 className="Delivery Time">{slaString}</h4>
+    </div>
+  );
+};
+const RestaurantContainer = () => {
+  const restList = RestaurantsInfo.restaurants;
+  return (
+    <div className="rest_container">
+      {restList.map((restaurant) => {
+        return <RestaurantCard resData={restaurant} />;
+      })}
+    </div>
+  );
+};
+const Body = () => (
+  <div className="app_body">
+    <RestaurantContainer />
+  </div>
+);
+
+const AppLayout = () => (
+  <div className="app">
+    <Header />
+    <Body />
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderAssignment />);
+
+root.render(<AppLayout />);
