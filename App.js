@@ -29,7 +29,7 @@ const Header = () => (
 );
 
 const RestaurantCard = (props) => {
-  const { name, cloudinaryImageId, cuisines, avgRating, slaString } =
+  const { name, cloudinaryImageId, cuisines, avgRating, costForTwo } =
     props.resData.info;
   return (
     <div className="rest_card">
@@ -41,7 +41,7 @@ const RestaurantCard = (props) => {
       <h2 className="rest_name">{name}</h2>
       <h3 className="cuisine">{cuisines.join(", ")}</h3>
       <h4 className="rating">{avgRating}</h4>
-      <h4 className="Delivery Time">{slaString}</h4>
+      <h4 className="Delivery Time">{costForTwo}</h4>
     </div>
   );
 };

@@ -35,9 +35,13 @@
     width: 200px;
 }
 
+.rest_card:hover{
+    cursor: pointer;
+}
+
 .rest_image{
     height: 100px;
-    /* width: 150px; */
+    width: 200px;
 }
 
 .rest_card{
