@@ -17,3 +17,13 @@ Parcel (Makes Dev Experience smooth)
 - Option to host on HTTPS (npx parcel build index.html --https)
 - Tree Shaking - Remove unused code for you
 - Diffrent build for dev and production
+
+
+// Header
+//  - Logo
+//  - Navitems
+// Body
+//  - Search bar
+//  - Restaurant list container
+// Footer
+//  - Copyright, Link, Address
